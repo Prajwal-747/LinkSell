@@ -1,14 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Seller Registration</title>
+    <meta charset="UTF-8">
+    <title>Register as Seller | LinkSell</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Register as Seller</h1>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Register</button>
-    </form>
+    <div class="wrapper">
+        <div class="form-card">
+            <h1>Register Your Shop</h1>
+            <p class="tagline">Sell smarter with your own LinkSell store page.</p>
+
+            <form method="POST">
+                <!-- inside your <form> ... -->
+                <div class="form-grid">
+                <div class="form-row">
+                <label for="shop_name">Shop Name</label>
+                <input id="shop_name" name="shop_name" type="text" required>
+                <small>Enter your shop or brand name as you want it to appear publicly.</small>
+                </div>
+
+                <div class="form-row">
+                <label for="whatsapp_number">WhatsApp Number</label>
+                <input id="whatsapp_number" name="whatsapp_number" type="tel" required>
+                <small>Buyers will contact you here — Indian numbers only.</small>
+                </div>
+
+                <div class="form-row">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required>
+                <small>Used for order updates and verification.</small>
+                </div>
+
+                <div class="form-row">
+                <label for="address">Address (optional)</label>
+                <textarea id="address" name="address" rows="3"></textarea>
+                <small>Only if you want to show your pickup or business address.</small>
+                </div>
+
+                <div class="form-row">
+                    <button type="submit" class="submit-btn">Create My Seller Page</button>
+                </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
 </body>
 </html>
